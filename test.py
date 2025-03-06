@@ -10,10 +10,10 @@ response = requests.get(api)
 if response.status_code == 200:
     data = response.json()
 
-# Importem la classe Weather
+# Creation of Weather object
 weather = Weather(data)
 
-# Executem tots els mètodes i imprimim els resultats
+# Execution and results of the methods
 print("Creation time:", weather.get_creation_time())
 print("Town:", weather.get_town())
 print("Province:", weather.get_province())
@@ -56,8 +56,11 @@ print("Tomorrow's hourly wind data:", weather.get_tomorrow_wind())
 print("Tomorrow's max wind speed:", weather.get_tomorrow_max_wind())
 print("Tomorrow's sky description:", weather.get_tomorrow_sky_description())
 
-# Comprovem si la data de la API és correcta
+# Check if the data is correct
 try:
     print("Checking API data correctness:", weather.check_all_correct())
 except ValueError as e:
     print(e)
+
+# Weather report
+print(weather)
