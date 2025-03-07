@@ -279,7 +279,7 @@ class Weather:
         return output_string
     
     def __astronomic_info(self):
-        title = "ATRONOMIC INFORMATION"
+        title = "ASTRONOMIC INFORMATION"
         today_sunrise = f"Today's sunrise: {self.get_today_sunrise()}"
         today_sunset = f"Today's sunset: {self.get_today_sunset()}"
         tomorrow_sunrise = f"Tomorrow's sunrise: {self.get_tomorrow_sunrise()}"

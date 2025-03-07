@@ -1,14 +1,16 @@
-import requests
 from data_extraction import Weather
+from fetch_data import fetch_data
 
-province_code = input("Insert the province code: ")
+# province_code = input("Insert the province code: ")
 ine_code = input("Insert the code from the NEI (INE) of the town: ")
 
-api = f"https://www.el-tiempo.net/api/json/v2/provincias/{province_code}/municipios/{ine_code}"
-response = requests.get(api)
+# api = f"https://www.el-tiempo.net/api/json/v2/provincias/{province_code}/municipios/{ine_code}"
+# response = requests.get(api)
 
-if response.status_code == 200:
-    data = response.json()
+# if response.status_code == 200:
+#     data = response.json()
+
+data = fetch_data(ine_code)
 
 # Creation of Weather object
 weather = Weather(data)
